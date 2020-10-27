@@ -1,0 +1,26 @@
+﻿@model OnlineFlightBooking.Models.Plain
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Plain</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlainTotalSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlainTotalSeats)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlainID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

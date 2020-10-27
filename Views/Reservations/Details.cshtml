@@ -1,0 +1,50 @@
+﻿@model OnlineFlightBooking.Models.Reservation
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Reservation</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Flight.FlightNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Flight.FlightNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.FirstName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Person.FirstName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FinalPrice)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FinalPrice)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ReservationID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

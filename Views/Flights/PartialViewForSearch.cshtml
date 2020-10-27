@@ -1,0 +1,21 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+
+@using (Html.BeginForm())
+{
+    <p>
+        from: @Html.DropDownList("flightFromCountry", new SelectList(ViewBag.allfroms), "select")
+    </p>
+    <p>
+        to: @Html.DropDownList("flightToCountry", new SelectList(ViewBag.alldestinations), "select")
+    </p>
+    <p>
+        when: @Html.Display("flightDateTimeTakeOff")
+        <input type="datetime-local" name="flightDateTimeTakeOff" class="form-control" />
+    </p>
+    <p>
+        how many passengers: @Html.TextBox("numOfPassengers")
+    </p>
+    <p>
+        <input type="submit" value="search flights" />
+    </p>
+}

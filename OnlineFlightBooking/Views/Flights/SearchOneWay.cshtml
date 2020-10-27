@@ -1,0 +1,12 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+
+@{
+    ViewBag.Title = "SearchOneWay";
+}
+
+<h2>Search One Way Trip</h2>
+
+@Html.Partial("PartialViewForSearch", this.Model)
+
+@Html.Partial("PartialViewForSearchResult", this.Model)
+

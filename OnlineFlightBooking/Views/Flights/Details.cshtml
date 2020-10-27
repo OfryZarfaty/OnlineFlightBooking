@@ -1,0 +1,98 @@
+﻿@model OnlineFlightBooking.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plain.PlainID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plain.PlainID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightFromCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightFromCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightToCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightToCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDateTimeTakeOff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDateTimeLanding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDateTimeLanding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightTotalAviableSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightTotalAviableSeats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FlightID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

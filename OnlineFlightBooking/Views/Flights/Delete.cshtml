@@ -1,0 +1,104 @@
+﻿@model OnlineFlightBooking.Models.Flight
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plain.PlainID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plain.PlainID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightFromCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightFromCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightToCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightToCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDateTimeTakeOff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDateTimeLanding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDateTimeLanding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightTotalAviableSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightTotalAviableSeats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Plain.PlainID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightFromCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightToCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDateTimeLanding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightTotalAviableSeats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plain.PlainID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightFromCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightToCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightDateTimeTakeOff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightDateTimeLanding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightTotalAviableSeats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FlightID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FlightID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FlightID })
+        </td>
+    </tr>
+}
+
+</table>

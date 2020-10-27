@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+
+@using (Html.BeginForm("Create", "Reservations", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken();
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightFromCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightToCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightPrice)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightID)
+                    <input type="radio" name="flightID" value="@item.FlightID" required />
+                    <input type="hidden" name="numOfPassangers" value="@ViewBag.numOfPassengers" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightFromCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightToCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDateTimeTakeOff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightPrice)
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" value="book flight">
+}

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Reservation>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Your Order Details</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightNumber)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Person.FirstName)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightFromCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightToCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightDateTimeTakeOff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightNumber)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Person.FirstName)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightFromCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightToCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightDateTimeTakeOff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalPrice)
+            </td>
+            <td></td>
+        </tr>
+    }
+</table>
+
+@*<div class="col-md-offset-2 col-md-10">
+    <input type="submit" value="Create" class="btn btn-default" />
+</div>*@
+
+@*@Html.ActionLink("next to payment", "Payment", "CreditCards", new { person = @ViewBag.person, price = @ViewBag.price }, null)*@
+<br />
+@Html.ActionLink("next to payment", "Create", "CreditCards", new { person = @ViewBag.person, price = @ViewBag.price }, htmlAttributes: new { @class = "btn btn-default" })
