@@ -68,7 +68,9 @@
                 {
                         new SelectListItem() {Text = "ON TIME", Value="ON TIME"},
                         new SelectListItem() {Text = "DELAYED", Value="DELAYED"},
-                        new SelectListItem() {Text = "CANCELLED", Value="CANCELLED"}
+                        new SelectListItem() {Text = "CANCELLED", Value="CANCELLED"},
+                        new SelectListItem() {Text = "ARRIVED", Value="ARRIVED"}
+
                 })
                 @Html.ValidationMessageFor(model => model.FlightStatus, "", new { @class = "text-danger" })
             </div>

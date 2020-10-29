@@ -19,6 +19,24 @@ namespace OnlineFlightBooking.Controllers
             var flights = db.Flights.Include(f => f.Plain);
             return View(flights.ToList());
         }
+        public ActionResult FlightsStatus()
+        {
+            var allFlights =
+                from f in db.Flights
+                select f;
+            List<Flight> listAllFlights = allFlights.ToList();
+            foreach(Flight f in listAllFlights)
+            {
+                Flight flight = db.Flights.Find(f.FlightID);
+                if(DateTime.Compare(f.FlightDateTimeTakeOff, DateTime.Now) < 0){
+                    f.FlightStatus = "ARRIVED";
+                }
+                db.SaveChanges();
+            }
+
+            var flights = db.Flights.Include(f => f.Plain);
+            return View(flights.ToList());
+        }
 
         public ActionResult Details(int? id)
         {

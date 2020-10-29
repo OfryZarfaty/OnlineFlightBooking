@@ -122,11 +122,27 @@ body {
     padding:15px;
 }
 
+#showcase-login .form-group2 {
+    font-size: 19px;
+    padding: 3px;
+}
+
 #showcase-login .close{
     position:absolute;
     top:0;
     right:30px;
     font-size:35px;
     cursor:pointer;
-    color:red;
+}
+
+#notloged{
+    font-family:homePageFont3;
+    font-size:15px;
+}
+
+#showcase-login .form {
+    position:center;
+    font-size: 35px;
+    margin:0;
+    padding:0;
 }

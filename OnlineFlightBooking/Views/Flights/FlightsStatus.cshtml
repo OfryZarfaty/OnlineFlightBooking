@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+
+
+<title>Flights Status</title>
+<h1>Online Flight Timetable</h1>
+<h3>Information is continuously updated</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightFromCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightToCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDateTimeLanding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightFromCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightToCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDateTimeTakeOff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDateTimeLanding)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightStatus)
+            </td>
+        </tr>
+    }
+
+</table>

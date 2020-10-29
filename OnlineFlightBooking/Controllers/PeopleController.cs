@@ -14,9 +14,14 @@ namespace OnlineFlightBooking.Controllers
     {
         private MyDB db = new MyDB();
 
-        public ActionResult Home()
+        public ActionResult LandingPage()
         {
             return View();
+        }
+
+        public ActionResult Home()
+        {
+            return View(db.People.ToList());
         }
 
         // GET: People
@@ -151,8 +156,6 @@ namespace OnlineFlightBooking.Controllers
                         if (admin != null)
                         {
                             Session["UserId"] = admin.AdminID;
-                            //Session["UserName"] = admin.UserName.ToString();
-                            //Session["type"] = "Admin";
                             return RedirectToAction("Index", "Admin");
                         }
                     }
@@ -163,9 +166,7 @@ namespace OnlineFlightBooking.Controllers
                         if (customer != null)
                         {
                             Session["UserId"] = customer.PersonID;
-                            //Session["UserName"] = customer.UserName.ToString();
-                            //Session["type"] = "Person";
-                            return RedirectToAction("SearchOneWay", "Flights");
+                            return RedirectToAction("Home");
                         }
                     }
                     ViewData["notLegedIn"] = "Username or passward was incorrect";

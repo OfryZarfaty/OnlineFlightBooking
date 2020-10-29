@@ -1,27 +1,187 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="~/Content/Home.css"/>
-    <title>ONLINE FLIGHT BOOKING</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="~/Content/Index1.css" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">*@
+    <script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js" integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD" crossorigin="anonymous"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofrytish Airways</title>
+
 </head>
 
 <body>
-    <header id="showcase">
-        <h1>TIME TO TRAVEL</h1>
-        <p>Ready for your next trip? Book with us now</p>
-        <a href="/People/LogIn" class="button">Log in</a>
-        <a href="/People/Create" class="button">Sign in</a>
+    @*NAVBAR*@
+    <div class="navbar-fixed">
+        <nav class="topNav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/People/Home" class="brand-logo">Ofrytish Airways</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="/People/Home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/Flights/SearchOneWay">Search</a>
+                        </li>
+                        <li>
+                            <a href="/Flights/FlightsStatus">Flights Status</a>
+                        </li>
+                        <li>
+                            <a href="#account">Account<i class="material-icons">cloud</i></a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-    </header>
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <a href="/People/Home">Home</a>
+        </li>
+        <li>
+            <a href="/Flights/SearchOneWay">Search</a>
+        </li>
+        <li>
+            <a href="/Flights/FlightsStatus">Flights Status</a>
+        </li>
+        <li>
+            <a href="#account">Account</a>
+        </li>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+    </ul>
 
-    @*<div class="bg-modal">
-        <div class="modal-content">
-            <img src="~/Images/signInPage.jpg" width="150" height="100"/>
+    @*@*SECTION: SLIDER*@
+    <section class="slider">
+        <ul class="slides">
+            <li>
+                <img src="~/Images/layout1.jpg">
+                <div class="caption center-align">
+                    <h2>Online Flight Booking</h2>
+                    <h5 class="light grey-text text-lighten-3"
+                        hide-on-small-only>
+                        Here's our small slogan.
+                    </h5>
+                </div>
+            </li>
+            <li>
+                <img src="~/Images/layout2.jpg" />
+                <div class="caption left-align">
+                    <h2>Left Aligned Caption</h2>
+                    <h5 class="light grey-text text-lighten-3"
+                        hide-on-small-only>
+                        Here's our smhgfddh.
+                    </h5>
+                </div>
+            </li>
+            <li>
+                <img src="~/Images/layout3.jpg" />
+                <div class="caption right-align">
+                    <h2>Right Aligned Caption</h2>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                <div class="caption center-align">
+                    <h2>This is our big Tagline!</h2>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    @*SECTION: ICON BOXES*@
+    @*<section class="section section-icons">
+        <div class="container">
+            <div class="row">
+
+            </div>
         </div>
-    </div>*@
+    </section>*@
+
+    @*google maps API:*@
+    @*<section class="map">*@
+
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            //set the map on tel aviv
+            var options = {
+                zoom: 5,
+                center: { lat: 32.0853, lng: 34.7818 }
+            }
+
+            //create google map object
+            var map = new google.maps.Map(document.getElementById('map'), options);
+            //markers
+            addMarker({ lat: 32.0853, lng: 34.7818 });
+            addMarker({ lat: 39.0742, lng: 21.8243 });
+            addMarker({ lat: 38.9637, lng: 35.2433 });
+            addMarker({ lat: 41.8719, lng: 12.5674 });
+            addMarker({ lat: 35.1264, lng: 33.4299 });
+            addMarker({ lat: 15.8700, lng: 100.9925 });
+            addMarker({ lat: 14.0583, lng: 108.2772 });
+            addMarker({ lat: 35.8617, lng: 104.1954 });
+            addMarker({ lat: 40.4168, lng: -3.7038 });
+            addMarker({ lat: 51.1657, lng: 10.4515 });
+            addMarker({ lat: 61.9241, lng: 25.7482 });
+            addMarker({ lat: 60.4720, lng: 8.4689 });
+            addMarker({ lat: 51.5074, lng: 0.1278 });
+            addMarker({ lat: 56.1304, lng: -106.3468 });
+            addMarker({ lat: 40.7128, lng: -74.0060 });
+
+            function addMarker(coords) {
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    //where to add the marker to
+                    map: map,
+                    icon: 'http://maps.google.com/mapfiles/kml/shapes/airports.png',
+                });
+
+            }
+
+            google.maps.event.addListener(map, 'click', function (event) {
+                var result = [event.latLng.lng()];
+                transition(result);
+            });
+        }
+    </script>
+    <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9woOToLgjWhWAVO0qTl8qOTTOd6N9x7E&callback=initMap">
+    </script>
+    @*</section>*@
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        @*SIDE NAV*@
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
+
+        @* SLIDER *@
+        const slider = document.querySelector('.slider');
+        M.Slider.init(slider, {
+            indicators: false,
+            height: 300,
+            transition: 500,
+            interval:6000
+        });
+    </script>
+
 
 </body>
-
-
 </html>

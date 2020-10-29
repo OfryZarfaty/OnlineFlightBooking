@@ -4,7 +4,6 @@
     ViewBag.Title = "LogIn";
 }
 
-
 <title>Log in</title>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
         <div class="bg-modal">
             <div class="modal-content">
                 <div class="close">
-                @Html.ActionLink("x", "Home")
+                    @Html.ActionLink("x", "LandingPage")
                 </div>
                 <img src="~/Images/signInPage.jpg" width="150" height="100" />
                 <h2>Log in</h2>
@@ -42,7 +41,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -50,7 +49,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -66,8 +65,13 @@
                 @if (ViewData["notLegedIn"] != null)
                 {
                     <div id="notloged">
-                        @ViewData["notLegedIn"]
+                    @ViewData["notLegedIn"]
                     </div>
+                    @*<script>
+                    function myFunction() {
+                      alert("Hello! I am an alert box!");
+                    }
+                    </script>*@
                 }
 
             </div>
