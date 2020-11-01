@@ -2,34 +2,47 @@
 
 @using (Html.BeginForm("Create", "Reservations", FormMethod.Post, new { target = "_blank" }))
 {
-    @Html.AntiForgeryToken();
+    @Html.AntiForgeryToken()
 
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FlightID)
+                <div class="output-grp">
+                    @Html.DisplayNameFor(model => model.FlightID)
+                </div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightFromCountry)
+                <div class="output-grp">
+                    @Html.DisplayNameFor(model => model.FlightFromCountry)
+                </div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightToCountry)
+                <div class="output-grp">
+                    @Html.DisplayNameFor(model => model.FlightToCountry)
+                </div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+                <div class="output-grp">
+                    @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+                </div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightPrice)
+                <div class="output-grp">
+                    @Html.DisplayNameFor(model => model.FlightPrice)
+                </div>
             </th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="results">
                 <td>
-                    @Html.DisplayFor(modelItem => item.FlightID)
-                    <input type="radio" name="flightID" value="@item.FlightID" required />
+                    <div class="radio-btn">
+
+                    @*@Html.DisplayFor(modelItem => item.FlightID)*@
+                    <input type="radio" class="btn" name="flightID" value="@item.FlightID" required />
                     <input type="hidden" name="numOfPassangers" value="@ViewBag.numOfPassengers" />
+                    </div>
                 </td>
 
                 <td>
@@ -47,5 +60,5 @@
             </tr>
         }
     </table>
-    <input type="submit" value="book flight">
+    <input type="submit" value="Book Flight" class="book-button">
 }
