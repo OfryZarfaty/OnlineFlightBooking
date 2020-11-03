@@ -10,108 +10,43 @@
 
 @*--------------------------------------------------------------------*@
 
-@*<!DOCTYPE html>
-    <html>
-    <head>
-        <title>search</title>
-        <link rel="stylesheet" href="~/Content/Search.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    </head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search One Way Trip</title>
+    <link rel="stylesheet" href="~/Content/Search.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
 
-    <body>
-        <div class="booking-form-box" id="form">
-            <div class="radio-btn">
+<body>
+    <div class="wrapper">
+        <div class="booking-form-box">
+            @*<div class="radio-btn">
                 <input type="radio" class="btn" name="check" checked="checked" />
                 <span>One way trip</span>
                 <input type="radio" class="btn" name="check" />
                 <span>Round trip</span>
-            </div>
+            </div>*@
 
             <div class="booking-form">
                 @Html.Partial("PartialViewForSearch", this.Model)
-
             </div>
         </div>
 
-        <script>
-            function afterSubmit() {
-                document.getElementById("form").setAttribute("class", "after-box");
-                return false;
-            }
-        </script>
-
-    </body>
-    </html>*@
-
-@*----test-------*@
-
-@*<!DOCTYPE html>
-    <html>
-    <head>
-        <title>search</title>
-        <link rel="stylesheet" href="~/Content/Search.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    </head>
-
-    <body>
-        <div class="wrapper">
-            <div class="booking-form-box" @*id="box"*@>
-@*<div class="radio-btn">
-        <input type="radio" class="btn" name="check" checked="checked" />
-        <span>One way trip</span>
-        <input type="radio" class="btn" name="check" />
-        <span>Round trip</span>
-    </div>*@
-
-@*  <div class="booking-form">
-            @Html.Partial("PartialViewForSearch", this.Model)
+        <div class="booking-form-box-results">
+            <div class="booking-form-results">
+                @Html.Partial("PartialViewForSearchResult", this.Model)
+            </div>
         </div>
     </div>
+</body>
+</html>
 
-    <div class="booking-form-box-results">
-        @*bg-modal*@
-@*   <div class="booking-form-results">
-    @*bg-content*@
-@*      @Html.Partial("PartialViewForSearchResult", this.Model)
-                </div>
-            </div>
-
-            <script>
-                //document.getElementById('submit').addEventListener('click', function () {
-
-                //    document.querySelector('.booking-form-box').style.margin = '7% 5% 7%';
-                //});
-
-                document.getElementById('submit').addEventListener('click', function () {
-                    document.querySelector('.booking-form-box-results').style.display = "flex";
-                    return true;
-                });
-
-
-                        //let form = document.getElementById('submit');
-
-                        //form.addEventListener('submit', (event) => {
-                        //    document.querySelector('.booking-form-box-results').style.display = "flex";
-                        //});
-
-
-                        //document.getElementById("submit").addEventListener('click', functionsub());
-
-                        //function functionsub(event) {
-                        //    var msg = document.querySelector('.booking-form-box-results');
-                        //    msg.style.display = "flex";
-                        //}
-
-          @*  </script>
-
-        </div>
-    </body>
-    </html>*@
-
-@*//works:
-    //function afterSubmit() {
-    //    document.getElementById("box").style.margin = '7% 5% 7%';
-    //}*@
+<script>
+    function afterSubmit() {
+        document.getElementById("box").style.margin = '7% 5% 7%';
+    }
+</script>
 
 
 @*<script>
@@ -120,76 +55,3 @@
             return false;
         }
     </script>*@
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>search</title>
-    <link rel="stylesheet" href="~/Content/Search.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-</head>
-
-<body>
-    @*<header id="showcase-login">*@
-    <header id="showcase">
-        @*<div class="wrapper">*@
-        @*<div class="booking-form-box">*@
-        @*<div class="booking-form">*@
-
-
-        @Html.Partial("PartialViewForSearch", this.Model)
-        @*<input type="" value="test" class="button" id="submit1" />*@
-
-
-        @*<form id="nameform">
-            <label>From:</label>
-            @Html.DropDownList("flightFromCountry", new SelectList(ViewBag.allfroms), "select", new { @class = "form-control" })
-            <label>To:</label>
-            @Html.DropDownList("flightToCountry", new SelectList(ViewBag.alldestinations), "select", new { @class = "form-control" })
-            <label>When:</label>
-            @Html.Display("flightDateTimeTakeOff")
-            <input type="datetime-local" name="flightDateTimeTakeOff" class="form-control" />
-            <label>How many passengers:</label>
-            @Html.TextBox("numOfPassengers", 0, new { @class = "form-control" })
-        </form>
-
-        <button type="submit" form="nameform" value="Submit" id="submit">Submit</button>*@
-
-
-
-        @*</div>
-        </div>*@
-    </header>
-
-        <header id="showcase-login">
-        <div class="bg-modal">
-            <div class="modal-content">
-                @*<div class="booking-form-box-results">
-        <div class="booking-form-results">*@
-                @Html.Partial("PartialViewForSearchResult", this.Model)
-                @*</div>
-        </div>*@
-
-            </div>
-        </div>
-
-    </header>
-
-    @*</div>*@
-</body>
-</html>
-
-<script>
-    //document.getElementById('submit').addEventListener('click', function () {
-    //    document.querySelector('.bg-modal').style.display = "flex";
-
-    //});
-
-    document.getElementById('submit').addEventListener('click', function () {
-        document.querySelector('.bg-modal').style.display = "flex";
-        
-    });
-
-</script>
-

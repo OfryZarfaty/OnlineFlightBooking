@@ -1,18 +1,25 @@
-﻿/*body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}*/
+﻿nav {
+    font-family: font1 !important;
+    max-height: 40px !important;
+}
 
-/* Set padding to keep content from hitting the edges */
-/*.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}*/
+.nav-wrapper {
+    color: red !important;
+}
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Montserrat-SemiBold.otf);
+}
 
-/* Set width on the form input elements since they're 100% wide by default */
-/*input,
-select,
-textarea {
-    max-width: 280px;
-}*/
+ul{
+    font-family:font2 !important;
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Montserrat-Thin.otf);
+}
+.container {
+    width:85% !important;
+}
+
 

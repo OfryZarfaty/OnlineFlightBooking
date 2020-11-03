@@ -115,7 +115,7 @@
     max-height: inherit;
     border: 1px solid #ced4d4;
     grid-column: 2/4;
-    display:none;
+    /*display:none;*/
 }
 
 .booking-form-results {
@@ -156,6 +156,6 @@
     transition: 1s;
 }
 
-.bg-modal{
+/*.bg-modal{
     display:none;
-}
+}*/

@@ -1,39 +1,100 @@
-﻿@*<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js" integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD" crossorigin="anonymous"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @*NAVBAR*@
+    <div class="navbar-fixed">
+        <nav class="indigo darken-4 valign-wrapper" style="background-color:#090d4f !important;">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/People/Home" class="brand-logo">Ofrytish Airways</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="/People/Home">Home<i class="material-icons left">home</i></a>
+                        </li>
+                        <li>
+                            <a class="dropdown-trigger" data-target="dropdown1" href="#!">Search Flights<i class="material-icons left">search</i></a>
+                        </li>
+                        <li>
+                            <a href="/Flights/FlightsStatus">Flights Status<i class="material-icons left">flight</i></a>
+                        </li>
+                        <li>
+                            <a href="#account">Account<i class="material-icons left">face</i></a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact<i class="material-icons left">email</i></a>
+                        </li>
+                    </ul>
+
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="/Flights/SearchOneWay">One Way</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Flights/SearchRoundWay">Round</a></li>
+                    </ul>
+
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
-            </div>
-        </div>
+        </nav>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <a href="/People/Home">Home</a>
+        </li>
+        <li>
+            <a href="/Flights/SearchOneWay">Search One Way</a>
+        </li>
+        <li>
+            <a href="/Flights/SearchRoundWay">Search Round Trip</a>
+        </li>
+        <li>
+            <a href="/Flights/FlightsStatus">Flights Status</a>
+        </li>
+        <li>
+            <a href="#account">Account</a>
+        </li>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+    </ul>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderBody()
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        @*SIDE NAV*@
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
+    </script>
+
+    <script>
+        //document.addEventListener('DOMContentLoaded', function () {
+        //    var elems = document.querySelectorAll('.dropdown-trigger');
+        //    var instances = M.Dropdown.init(elems, hover);
+        //});
+
+        @*DROPDOWN MENU*@
+        const elemsDropdown = document.querySelectorAll(".dropdown-trigger");
+        const instancesDropdown = M.Dropdown.init(elemsDropdown, {
+            coverTrigger: false
+        });
+
+    </script>
 </body>
-</html>*@
+
+</html>
+

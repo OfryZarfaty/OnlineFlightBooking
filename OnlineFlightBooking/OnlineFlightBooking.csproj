@@ -169,6 +169,7 @@
     <Content Include="Content\LogIn.css" />
     <Content Include="Content\Search.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\sitePages.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\landingPage.jpg" />
@@ -177,6 +178,7 @@
     <Content Include="Images\layout3.jpg" />
     <Content Include="Images\search.jpg" />
     <Content Include="Images\signInPage.jpg" />
+    <Content Include="Images\sitePage.jpg" />
     <Content Include="libman.json" />
     <Content Include="obj\Debug\OnlineFlightBooking.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\OnlineFlightBooking.dll" />

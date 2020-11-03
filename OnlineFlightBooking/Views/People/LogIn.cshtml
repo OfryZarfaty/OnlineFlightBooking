@@ -1,7 +1,8 @@
 ﻿@model OnlineFlightBooking.Models.Person
 
 @{
-    ViewBag.Title = "LogIn";
+        Layout = null;
+        ViewBag.Title = "LogIn";
 }
 
 <title>Log in</title>
@@ -65,7 +66,7 @@
                 @if (ViewData["notLegedIn"] != null)
                 {
                     <div id="notloged">
-                    @ViewData["notLegedIn"]
+                        @ViewData["notLegedIn"]
                     </div>
                 }
 

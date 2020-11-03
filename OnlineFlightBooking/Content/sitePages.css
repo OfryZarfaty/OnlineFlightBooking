@@ -1,0 +1,27 @@
+﻿#wrapper{
+    margin-left:10px;
+}
+
+#wrapper .head {
+    font-family: font1;
+    color: #08046e;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Montserrat-ExtraBold.otf);
+}
+
+#wrapper .head-line {
+    font-family: font2;
+    color: #08046e;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Montserrat-SemiBold.otf);
+}
