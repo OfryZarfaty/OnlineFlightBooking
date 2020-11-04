@@ -15,19 +15,11 @@
 <head>
     <title>Search One Way Trip</title>
     <link rel="stylesheet" href="~/Content/Search.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 
 <body>
     <div class="wrapper">
         <div class="booking-form-box">
-            @*<div class="radio-btn">
-                    <input type="radio" class="btn" name="check" checked="checked" />
-                    <span>One way trip</span>
-                    <input type="radio" class="btn" name="check" />
-                    <span>Round trip</span>
-                </div>*@
-
             <div class="booking-form">
                 @Html.Partial("PartialViewForSearch", this.Model)
             </div>

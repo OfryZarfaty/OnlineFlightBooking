@@ -5,19 +5,19 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    @*<div class="form-horizontal">*@
         <div class="input-grp">
             <label>From:</label>
-            @Html.DropDownList("flightFromCountry", new SelectList(ViewBag.allfroms), "select", new { @class = "form-control" })
+            @Html.DropDownList("flightFromCountry", new SelectList(ViewBag.allfroms), "select", new { @class = "form-control browser-default" })
         </div>
         <div class="input-grp">
             <label>To:</label>
-            @Html.DropDownList("flightToCountry", new SelectList(ViewBag.alldestinations), "select", new { @class = "form-control" })
+            @Html.DropDownList("flightToCountry", new SelectList(ViewBag.alldestinations), "select", new { @class = "form-control browser-default" })
         </div>
         <div class="input-grp">
             <label>When:</label>
             @Html.Display("flightDateTimeTakeOff")
-            <input type="datetime-local" name="flightDateTimeTakeOff" class="form-control" />
+            <input type="datetime-local" name="flightDateTimeTakeOff" class="form-control"  />
         </div>
         <div class="input-grp">
             <label>How many passengers:</label>
@@ -27,5 +27,5 @@
             <input type="submit" value="Search Flights" class="button" id="submit" />
             @*<input type="button" id="submit" value="sub">*@
         </div>
-    </div>
+    @*</div>*@
 }

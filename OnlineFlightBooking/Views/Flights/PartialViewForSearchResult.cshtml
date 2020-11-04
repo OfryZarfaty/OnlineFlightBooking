@@ -37,14 +37,13 @@
         {
             <tr class="results">
                 <td>
-                    <div class="radio-btn">
+                    <label>
+                        <input name="flightID" type="radio" value="@item.FlightID" required />
+                        <span></span>
+                    </label>
 
-                    @*@Html.DisplayFor(modelItem => item.FlightID)*@
-                    <input type="radio" class="btn" name="flightID" value="@item.FlightID" required />
                     <input type="hidden" name="numOfPassangers" value="@ViewBag.numOfPassengers" />
-                    </div>
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.FlightFromCountry)
                 </td>

@@ -66,7 +66,8 @@ namespace OnlineFlightBooking.Controllers
                 }
             }
             ViewBag.CreditCardID = new SelectList(db.CreditCards, "CreditCardID", "CreditCardID", creditCard.CreditCardID);
-            return View(creditCard);
+            //return View(creditCard);
+            return RedirectToAction("Home", "People");
         }
 
         // GET

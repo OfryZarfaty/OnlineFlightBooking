@@ -1,7 +1,11 @@
 ﻿body {
-    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../Images/search.jpg');
-    background-size: cover;
+    margin: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../Images/search.jpg');
+    background-attachment: fixed !important;
+    height: 100%;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #tittles {

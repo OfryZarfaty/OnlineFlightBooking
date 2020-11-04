@@ -1,16 +1,20 @@
-﻿body {
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../Images/search.jpg');
-    background-size: cover;
+﻿body, html {
+    margin: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../Images/search.jpg');
+    background-attachment:fixed !important;
+    height: 100%;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.wrapper {
+/*----SEARCH----*/
+    .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr;
+    /*grid-template-rows:1fr 1fr 1fr;*/
     grid-gap: 3em;
-    margin-top:40px;
-    padding:40px;
+    margin-top: 10px !important;
+    padding: 40px;
 }
 
 .booking-form-box {
@@ -19,42 +23,6 @@
     border: 1px solid #ced4d4;
     /*margin:7% auto 7%;*/
     /*margin: 7% 5% 7%;*/
-}
-
-/*.radio-btn {
-    /*padding:10px;*/
-/*}*/
-
-.radio-btn .btn {
-    margin: 0;
-    box-shadow:none;
-}
-
-
-.radio-btn .btn ::after {
-    content:'';
-    height:15px;
-    width:15px;
-    top:-2px;
-    left:-1px;
-    background-color:white;
-    position:relative;
-    display:inline-block;
-    border:3px solid #fff;
-    visibility:visible;
-    border-radius:50%;
-}
-
-.radio-btn .btn :checked::after {
-    content: '';
-    background-color:#000;
-    transition:0.5s;
-}
-
-.radio-btn span{
-    color:#fff;
-    margin-right:5px;
-    font-size:14px;
 }
 
 .form-control{
@@ -69,17 +37,23 @@
     padding: 10px 30px 20px;
 }
 
-.booking-form label{
-    margin-bottom:5px;
+/*.booking-form label{
+    margin-bottom:50px;
     margin-top:10px;
     font-size:15px;
     color:#fff;
-}
+}*/
 
 .input-grp{
-    width:151px;
-    display:contents;
-    /*display:inline-block;*/
+    width:100%;
+    display:block;
+}
+
+.input-grp label {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #fff;
 }
 
 .input-grp option {
@@ -104,22 +78,27 @@
     transition:1s;
 }
 
-.table td{
-    text-align:center;
-}
 
-.table th{
-    text-align:center;
-}
+/*----RESULTS----*/
+
 .booking-form-box-results {
-    max-height: inherit;
     border: 1px solid #ced4d4;
     grid-column: 2/4;
     /*display:none;*/
 }
 
 .booking-form-results {
-    padding: 0 30px 20px;
+    padding: 0 25px 0;
+}
+
+.table th {
+    text-align: center;
+    border-bottom: 1px solid rgba(230, 238, 245, 0.54) !important;
+}
+
+.table td {
+    text-align: center;
+    border-bottom: 1px solid rgba(230, 238, 245, 0.54) !important;
 }
 
 .output-grp {
@@ -128,10 +107,22 @@
     color: #fff;
 }
 
-.results{
+.results {
     font-size: 12px;
     color: #fff;
-    align-content:center;
+    align-content: center;
+}
+
+[type="radio"]:not(:checked) + span:before, [type="radio"]:not(:checked) + span:after {
+    border: 1px solid rgba(230, 238, 245, 0.54) !important;
+}
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
+    background-color: rgba(230, 238, 245, 0.9) !important;
+}
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
+    border: 1px solid rgba(230, 238, 245, 0.9) !important;
 }
 
 .book-button {
@@ -140,9 +131,9 @@
     padding: 10px 10px;
     /*margin: 25px 60px 25px 60px;*/
     margin-top: 25px;
-    margin-bottom:25px;
-    margin-left:60px;
-    margin-right:60px;
+    margin-bottom: 25px;
+    margin-left: 60px;
+    margin-right: 60px;
     font-size: 13px;
     border: 1px solid #ced4d4;
     background: transparent;
@@ -159,3 +150,5 @@
 /*.bg-modal{
     display:none;
 }*/
+
+
