@@ -69,3 +69,7 @@ C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBoo
 C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.Migrations.Migration333.resources
 C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.Migrations.Migration334.resources
 C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.Migrations.Migration335.resources
+C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\bin\PagedList.dll
+C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\bin\PagedList.Mvc.dll
+C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\bin\PagedList.xml
+C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\bin\PagedList.Mvc.xml

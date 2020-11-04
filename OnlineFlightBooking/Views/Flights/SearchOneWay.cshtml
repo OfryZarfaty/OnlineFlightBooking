@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "SearchOneWay";
 }
 
@@ -10,8 +11,7 @@
 
 @*--------------------------------------------------------------------*@
 
-<!DOCTYPE html>
-<html>
+
 <head>
     <title>Search One Way Trip</title>
     <link rel="stylesheet" href="~/Content/Search.css" />
@@ -22,11 +22,11 @@
     <div class="wrapper">
         <div class="booking-form-box">
             @*<div class="radio-btn">
-                <input type="radio" class="btn" name="check" checked="checked" />
-                <span>One way trip</span>
-                <input type="radio" class="btn" name="check" />
-                <span>Round trip</span>
-            </div>*@
+                    <input type="radio" class="btn" name="check" checked="checked" />
+                    <span>One way trip</span>
+                    <input type="radio" class="btn" name="check" />
+                    <span>Round trip</span>
+                </div>*@
 
             <div class="booking-form">
                 @Html.Partial("PartialViewForSearch", this.Model)
@@ -40,7 +40,6 @@
         </div>
     </div>
 </body>
-</html>
 
 <script>
     function afterSubmit() {

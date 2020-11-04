@@ -1,50 +1,55 @@
-﻿@model IEnumerable<OnlineFlightBooking.Models.Flight>
+﻿@using PagedList;
+@using PagedList.Mvc;
 
-@{ 
+@*@model IEnumerable<OnlineFlightBooking.Models.Flight>*@
+
+@model IPagedList<OnlineFlightBooking.Models.Flight>
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
 <head>
-<link rel="stylesheet" href="~/Content/sitePages.css" />
-<title>Flights Status</title>
+    <link rel="stylesheet" href="~/Content/sitePages.css" />
+    <title>Flights Status</title>
 </head>
 
 <body>
-    <div id="wrapper">
-    <h1 class="head">ONLINE FLIGHT TIMETABLE</h1>
-    <h3 class="head-line">Information is continuously updated</h3>
+    <div id="tittles">
+        <h1 class="head">ONLINE FLIGHT TIMETABLE</h1>
+        <h3 class="head-line">Information is continuously updated</h3>
     </div>
 
-    <table class="table">
+    <table id="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FlightNumber)
+                @Html.DisplayNameFor(model => model.First().FlightNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightFromCountry)
+                @Html.DisplayNameFor(model => model.First().FlightFromCountry)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightToCountry)
+                @Html.DisplayNameFor(model => model.First().FlightToCountry)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightDateTimeTakeOff)
+                @Html.DisplayNameFor(model => model.First().FlightDateTimeTakeOff)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightDuration)
+                @Html.DisplayNameFor(model => model.First().FlightDuration)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightDateTimeLanding)
+                @Html.DisplayNameFor(model => model.First().FlightDateTimeLanding)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FlightStatus)
+                @Html.DisplayNameFor(model => model.First().FlightStatus)
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="lines">
                 <td>
                     @Html.DisplayFor(modelItem => item.FlightNumber)
                 </td>
@@ -70,4 +75,7 @@
         }
 
     </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("FlightsStatus", new { page }))
+
 </body>

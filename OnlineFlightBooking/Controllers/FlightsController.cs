@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OnlineFlightBooking.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace OnlineFlightBooking.Controllers
 {
@@ -19,7 +21,7 @@ namespace OnlineFlightBooking.Controllers
             var flights = db.Flights.Include(f => f.Plain);
             return View(flights.ToList());
         }
-        public ActionResult FlightsStatus()
+        public ActionResult FlightsStatus(int? page)
         {
             var allFlights =
                 from f in db.Flights
@@ -35,7 +37,7 @@ namespace OnlineFlightBooking.Controllers
             }
 
             var flights = db.Flights.Include(f => f.Plain);
-            return View(flights.ToList());
+            return View(flights.ToList().ToPagedList(page ?? 1, 15));
         }
 
         public ActionResult Details(int? id)
