@@ -38,35 +38,39 @@ namespace OnlineFlightBooking.Controllers
         // GET: CreditCards/Create
         public ActionResult Create()
         {
-            CreditCard creditCard = db.CreditCards.Find(Session["UserId"]);
-            if (creditCard == null)
+            Person p = db.People.Find(Session["UserId"]);
+            if (p.CreditCardID != null)
             {
-                return HttpNotFound();
+                CreditCard c = db.CreditCards.Find(p.CreditCardID);
+                return View(c);
             }
-            ViewBag.CreditCardID = new SelectList(db.CreditCards, "CreditCardID", "CreditCardID", creditCard.CreditCardID);
-            return View(creditCard);
+            ViewBag.personID = p.PersonID;
+            return View();
         }
 
-        // POST: CreditCards/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CreditCardID,FirstName,LastName,CardNumber,DateExpired,CVV")] CreditCard creditCard)
         {
-            if (ModelState.IsValid)
+            if (creditCard.CreditCardID ==0)
             {
+                creditCard.Person = db.People.Find(Session["UserId"]);
                 db.CreditCards.Add(creditCard);
                 db.SaveChanges();
-                if (Session["UserId"] != null)
+
+                Person p = db.People.Find(Session["UserId"]);
+                p.CreditCardID = creditCard.CreditCardID;
+                db.SaveChanges();
+            }
+            else
+            {
+                if (ModelState.IsValid)
                 {
-                    Person person = db.People.Find(Session["UserId"]);
-                    person.CreditCardID = creditCard.CreditCardID;
+                    db.Entry(creditCard).State = EntityState.Modified;
                     db.SaveChanges();
                 }
             }
             ViewBag.CreditCardID = new SelectList(db.CreditCards, "CreditCardID", "CreditCardID", creditCard.CreditCardID);
-            //return View(creditCard);
             return RedirectToAction("Home", "People");
         }
 

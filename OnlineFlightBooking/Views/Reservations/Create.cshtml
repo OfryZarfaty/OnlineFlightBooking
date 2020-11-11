@@ -12,8 +12,8 @@
             @Html.DisplayNameFor(model => model.Flight.FlightNumber)
         </th>
         @*<th>
-                @Html.DisplayNameFor(model => model.Person.FirstName)
-            </th>*@
+            @Html.DisplayNameFor(model => model.Person.FirstName)
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Flight.FlightFromCountry)
         </th>
@@ -22,6 +22,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Flight.FlightDateTimeTakeOff)
+        </th>
+        <th>
+            Number Of Passengers
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FinalPrice)
@@ -48,6 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Flight.FlightDateTimeTakeOff)
             </td>
             <td>
+                @ViewBag.numOfPassangers
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FinalPrice)
             </td>
             <td></td>
@@ -61,4 +67,4 @@
 
 @*@Html.ActionLink("next to payment", "Payment", "CreditCards", new { person = @ViewBag.person, price = @ViewBag.price }, null)*@
 <br />
-@Html.ActionLink("next to payment", "Create", "CreditCards", new { person = @ViewBag.person, price = @ViewBag.price }, htmlAttributes: new { @class = "btn btn-default" })
+@Html.ActionLink("Next To Payment", "Create", "CreditCards", new { person = @ViewBag.person, price = @ViewBag.price }, htmlAttributes: new { @class = "btn btn-default" })

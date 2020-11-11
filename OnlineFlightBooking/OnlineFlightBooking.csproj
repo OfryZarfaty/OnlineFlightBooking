@@ -288,6 +288,10 @@
     <Compile Include="Migrations\202010211339361_Migration335.designer.cs">
       <DependentUpon>202010211339361_Migration335.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011091627009_Migration336.cs" />
+    <Compile Include="Migrations\202011091627009_Migration336.designer.cs">
+      <DependentUpon>202011091627009_Migration336.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\CreditCard.cs" />
@@ -363,6 +367,9 @@
     <EmbeddedResource Include="Migrations\202010211339361_Migration335.resx">
       <DependentUpon>202010211339361_Migration335.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011091627009_Migration336.resx">
+      <DependentUpon>202011091627009_Migration336.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\OnlineFlightBooking.Migrations.EmptyMigration.resources" />
     <EmbeddedResource Include="obj\Debug\OnlineFlightBooking.Migrations.Migration33.resources" />

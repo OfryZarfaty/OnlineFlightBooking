@@ -17,6 +17,7 @@ namespace OnlineFlightBooking.Models
         public string LastName { get; set; }
 
         [Display(Name = "Card Number")]
+        //[DataType(DataType.CreditCard)]
         public int CardNumber { get; set; }
 
         [Display(Name = "Expiration Date")]

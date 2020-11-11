@@ -64,6 +64,7 @@ namespace OnlineFlightBooking.Controllers
                     Update(reservation.PersonID, reservation.FlightID, reservation.ReservationID, numOfPassangers);
                 }
                 ViewBag.person = person;
+                ViewBag.numOfPassangers = numOfPassangers;
                 ViewBag.price = reservation.FinalPrice;
                 return View(person.Reservations.ToList());
                 //return RedirectToAction();

@@ -45,8 +45,12 @@
     <div class="form-group">
         @Html.LabelFor(model => model.DateExpired, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.DateExpired, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DateExpired, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(model => model.DateExpired, "{0:yyyy-MM-ddTHH:mm:ss}", new
+            {
+                @class = "form-control",
+                required = "required",
+                @type = "datetime-local"
+            })
         </div>
     </div>
 
