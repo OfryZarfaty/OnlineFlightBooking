@@ -174,5 +174,15 @@ namespace OnlineFlightBooking.Controllers
             }
             return View(person);
         }
+
+        public ActionResult Account()
+        {
+            //int id = (int)Session["UserId"];
+
+            string firstName = db.People.Find(Session["UserId"]).FirstName.ToString();
+            ViewBag.name = firstName;
+
+            return View();
+        }
     }
 }

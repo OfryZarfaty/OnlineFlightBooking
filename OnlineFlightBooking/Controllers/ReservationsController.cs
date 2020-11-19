@@ -149,5 +149,24 @@ namespace OnlineFlightBooking.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Account()
+        {
+            int id = (int)Session["UserId"];
+
+            //all person's older reservations
+            var reservations =
+                from r in db.Reservations
+                where r.PersonID.Equals(id)
+                select r;
+            List<Reservation> allPersonReservations = reservations.ToList();
+            foreach (Reservation r in allPersonReservations)
+            {
+                r.Flight=db.Flights.Find(r.FlightID);
+
+            }
+            return PartialView(allPersonReservations);
+        }
+
     }
 }

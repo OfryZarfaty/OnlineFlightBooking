@@ -149,3 +149,4 @@ C:\Users\ofryz\Desktop\temp3\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\O
 C:\Users\ofryz\Desktop\temp3\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.dll
 C:\Users\ofryz\Desktop\temp3\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.pdb
 C:\Users\ofryz\Desktop\temp3\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.Migrations.Migration336.resources
+C:\school_ofry\OnlineFlightBooking\OnlineFlightBooking\obj\Debug\OnlineFlightBooking.Migrations.Migration336.resources

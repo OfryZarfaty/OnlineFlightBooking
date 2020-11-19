@@ -179,10 +179,14 @@
     <Content Include="Content\sitePages.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\1140.jpg" />
+    <Content Include="Images\1254.jpg" />
+    <Content Include="Images\account.jpg" />
     <Content Include="Images\landingPage.jpg" />
     <Content Include="Images\layout1.jpg" />
     <Content Include="Images\layout2.jpg" />
     <Content Include="Images\layout3.jpg" />
+    <Content Include="Images\layout4.jpeg" />
     <Content Include="Images\search.jpg" />
     <Content Include="Images\signInPage.jpg" />
     <Content Include="Images\sitePage.jpg" />
@@ -329,6 +333,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\People\LandingPage.cshtml" />
     <Content Include="Views\Flights\FlightsStatus.cshtml" />
+    <Content Include="Views\People\Account.cshtml" />
+    <Content Include="Views\Reservations\Account.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

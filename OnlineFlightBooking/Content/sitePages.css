@@ -2,23 +2,39 @@
     margin: 0;
     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../Images/search.jpg');
     background-attachment: fixed !important;
-    height: 100%;
-    background-position: center;
+    height: 100% !important;
+    background-position: center !important;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover !important;
 }
 
+#account {
+    /*background-image: url('../Images/1254.jpg') !important;
+    background-attachment: fixed !important;
+    height: 100vh !important;
+    background-repeat: no-repeat;
+    background-size: 100vh auto !important;
+    background-position: center !important;*/
+    background-image: url('../Images/1254.jpg') !important;
+    background-attachment: fixed !important;
+    height: 100vh !important;
+    /*background-position: center !important;*/
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    /*background-position-x:bottom!important;*/
+    background-position-y:top!important;
+}
 #tittles {
     margin-left: 90px;
 }
 
-    #tittles .head {
-        font-family: font1;
-        color: #090d4f;
-        font-size: 40px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+#tittles .head {
+    font-family: font1;
+    color: #090d4f;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 @font-face {
     font-family: font1;
@@ -55,10 +71,10 @@
 
     #table .lines:hover {
         /*background-color: #ddd;*/
-        background-color: rgba(241, 237, 228, 0.27);
-        color: #090d4f;
-        transition: 0.5s;
-    }
+    background-color: rgba(241, 237, 228, 0.27);
+    color: #090d4f;
+    transition: 0.5s;
+}
 
     #table th {
         text-align: center;

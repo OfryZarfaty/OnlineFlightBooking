@@ -1,0 +1,34 @@
+﻿@model IEnumerable<OnlineFlightBooking.Models.Person>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>My Account</title>
+    <link rel="stylesheet" href="~/Content/sitePages.css" />
+</head>
+
+<body id="account">
+@*<body style="background-image: url('../Images/account.jpg')!important;">*@
+    <header id="showcase-account">
+        <div id="tittles">
+            <h1 class="head">MY ACCOUNT</h1>
+            <h3 class="head-line">Hi, @ViewBag.name</h3>
+        </div>
+    </header>
+    <div class="wrapper">
+
+        <div id="partialViewReservations">
+            <h3 class="head-line">Purchase History</h3>
+            @Html.Action("Account", "Reservations")
+        </div>
+
+        <div id="partialViewCreditCard">
+            <h3 class="head-line">Payment Method</h3>
+            @Html.Action("Edit", "CreditCards")
+        </div>
+
+    </div>
+
+</body>

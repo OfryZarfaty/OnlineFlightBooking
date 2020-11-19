@@ -75,32 +75,70 @@ namespace OnlineFlightBooking.Controllers
         }
 
         // GET
-        public ActionResult Edit(int? id)
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    CreditCard creditCard = db.CreditCards.Find(id);
+        //    if (creditCard == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(creditCard);
+        //}
+
+        public ActionResult Edit()
         {
-            if (id == null)
+            Person p = db.People.Find(Session["UserId"]);
+            if (p.CreditCardID != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                CreditCard c = db.CreditCards.Find(p.CreditCardID);
+                return View(c);
             }
-            CreditCard creditCard = db.CreditCards.Find(id);
-            if (creditCard == null)
-            {
-                return HttpNotFound();
-            }
-            return View(creditCard);
+            ViewBag.personID = p.PersonID;
+            return PartialView();
         }
 
         // POST
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "CreditCardID,FirstName,LastName,CardNumber,DateExpired,CVV")] CreditCard creditCard)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(creditCard).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(creditCard);
+        //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CreditCardID,FirstName,LastName,CardNumber,DateExpired,CVV")] CreditCard creditCard)
         {
-            if (ModelState.IsValid)
+            if (creditCard.CreditCardID == 0)
             {
-                db.Entry(creditCard).State = EntityState.Modified;
+                creditCard.Person = db.People.Find(Session["UserId"]);
+                db.CreditCards.Add(creditCard);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                Person p = db.People.Find(Session["UserId"]);
+                p.CreditCardID = creditCard.CreditCardID;
+                db.SaveChanges();
             }
-            return View(creditCard);
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Entry(creditCard).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            ViewBag.CreditCardID = new SelectList(db.CreditCards, "CreditCardID", "CreditCardID", creditCard.CreditCardID);
+            return PartialView();
         }
 
         // GET: CreditCards/Delete/5
